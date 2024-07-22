@@ -21,6 +21,12 @@
        CustomLog ${APACHE_LOG_DIR}/access.log combined
    </VirtualHost>
    ```
+   ```bash
+   cd /var/www
+   ```
+   ```bash
+   mkdir simrs
+   ```
 3. **API-SIMRS Config Apache2:**
    ```bash
    sudo nano /etc/apache2/sites-available/api-simrs.conf
@@ -39,4 +45,10 @@
        ErrorLog ${APACHE_LOG_DIR}/error.log
        CustomLog ${APACHE_LOG_DIR}/access.log combined
    </VirtualHost>
+   ```
+   ```bash
+   cd /var/www
+   ```
+   ```bash
+   mkdir api-simrs
    ```
