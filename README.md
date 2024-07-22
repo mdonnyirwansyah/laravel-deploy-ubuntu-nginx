@@ -20,10 +20,7 @@
    ```bash
    sudo a2enconf php8.2-fpm
    ```
-   ```bash
-   sudo systemctl restart apache2
-   ```
-2. **SIMRS Config Apache2:**
+2. **SIMRS Config:**
    ```bash
    sudo nano /etc/apache2/sites-available/simrs.conf
    ```
@@ -43,14 +40,59 @@
    </VirtualHost>
    ```
    ```bash
-   cd /var/www
+   sudo mkdir /var/www/simrs
    ```
    ```bash
-   mkdir simrs
+   cd /var/www/simrs
    ```
-3. **API-SIMRS Config Apache2:**
+   ```bash
+   
+   ```
+3. **API-SIMRS Config:**
+   ```bash
+   sudo mkdir /var/www/api-simrs
+   ```
+   ```bash
+   cd /var/www/api-simrs
+   ```
+   ```bash
+   sudo usermod -a -G www-data $USER
+   ```
+   ```bash
+   sudo chown -R $USER:www-data storage bootstrap/cache
+   ```
+   ```bash
+   sudo chgrp -R www-data storage bootstrap/cache
+   ```
+   ```bash
+   sudo chmod -R ug+rwx storage bootstrap/cache
+   ```
+   ```bash
+   wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+   ```
+   ```bash
+   nvm install node
+   ```
+   ```bash
+   npm install
+   ```
+   ```bash
+   npm run build
+   ```
+   ```bash
+   composer install --optimize-autoloader --no-dev
+   ```
+   ```bash
+   cp .example.env .env
+   ```
+   ```bash
+   php artisan key:generate
+   ```
    ```bash
    sudo nano /etc/apache2/sites-available/api-simrs.conf
+   ```
+   ```bash
+   sudo nano /etc/apache2/ports.conf
    ```
    ```bash
    <VirtualHost *:81>
@@ -68,8 +110,12 @@
    </VirtualHost>
    ```
    ```bash
-   cd /var/www
+   sudo apache2ctl configtest
    ```
    ```bash
-   mkdir api-simrs
+   sudo a2ensite satset-client.conf
    ```
+   ```bash
+   sudo systemctl restart apache2
+   ```
+   
