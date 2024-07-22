@@ -159,9 +159,6 @@
    nano .env
    ```
    ```bash
-   cd data
-   ```
-   ```bash
    cp data/database.example.db data/database.db
    ```
    ```bash
