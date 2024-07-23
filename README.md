@@ -57,7 +57,7 @@
    ```bash
    sudo a2dissite 000-default.conf
    ```
-3. **Set Up Database:**
+3. **Setup Database:**
    ```bash
    sudo mysql
    ```
@@ -116,7 +116,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-5. **API-SIMRS Config:**
+5. **API-SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/api-simrs
    ```
@@ -199,7 +199,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-6. **Satset-Server Config:**
+6. **Satset-Server Installation:**
    ```bash
    sudo mkdir /var/www/satset-server
    ```
@@ -274,7 +274,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-7. **Satset-Client Config:**
+7. **Satset-Client Installation:**
    ```bash
    sudo mkdir /var/www/satset-client
    ```
