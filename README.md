@@ -45,6 +45,12 @@
    ```bash
    exit
    ```
+   ```bash
+   sed -i 's/DEFINER=[^*]*\*/\*/g' db-dumps/mysql-simrs_db.sql
+   ```
+   ```bash
+   mysql -u simrs_admin -p simrs_db < db-dumps/mysql-simrs_db.sql
+   ```
 3. **SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/simrs
