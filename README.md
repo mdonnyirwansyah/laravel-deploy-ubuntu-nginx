@@ -1,4 +1,35 @@
-1. **PHP & Apache2 Config:**
+1. **Setup Ubuntu firewall:**
+   ```bash
+   sudo ufw enable
+   ```
+   ```bash
+   sudo ufw default deny incoming
+   ```
+   ```bash
+   sudo ufw default allow outgoing
+   ```
+   ```bash
+   sudo ufw app list
+   ```
+   ```bash
+   sudo ufw allow ‘Apache Full’
+   ```
+   ```bash
+   sudo ufw allow OpenSSH
+   ```
+   ```bash
+   sudo ufw allow ssh
+   ```
+   ```bash
+   sudo ufw allow http
+   ```
+   ```bash
+   sudo ufw allow https
+   ```
+   ```bash
+   sudo ufw status
+   ```
+2. **PHP & Apache2 Config:**
    ```bash
    sudo apt install php8.2 php8.2-gd php8.2-intl php8.2-mbstring php8.2-fpm php8.2-curl php8.2-mysql php8.2-xml php8.2-bcmath php8.2-zip
    ```
@@ -29,7 +60,7 @@
    ```bash
    sudo a2dissite 000-default.conf
    ```
-2. **Set Up Database:**
+3. **Set Up Database:**
    ```bash
    sudo mysql
    ```
@@ -51,7 +82,7 @@
    ```bash
    mysql -u simrs_admin -p simrs_db < db-dumps/mysql-simrs_db.sql
    ```
-3. **SIMRS Installation:**
+4. **SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/simrs
    ```
@@ -88,7 +119,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-4. **API-SIMRS Config:**
+5. **API-SIMRS Config:**
    ```bash
    sudo mkdir /var/www/api-simrs
    ```
@@ -171,7 +202,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-5. **Satset-Server Config:**
+6. **Satset-Server Config:**
    ```bash
    sudo mkdir /var/www/satset-server
    ```
