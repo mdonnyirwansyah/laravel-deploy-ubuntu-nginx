@@ -29,7 +29,23 @@
    ```bash
    sudo a2dissite 000-default.conf
    ```
-2. **SIMRS Installation:**
+2. **Set Up Database:**
+   ```bash
+   sudo mysql
+   ```
+   ```bash
+   CREATE DATABASE simrs_db;
+   ```
+   ```bash
+   CREATE USER 'simrs_admin'@'%' IDENTIFIED WITH mysql_native_password BY '';
+   ```
+   ```bash
+   GRANT ALL ON simrs_db.* TO 'simrs_admin'@'%';
+   ```
+   ```bash
+   exit
+   ```
+3. **SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/simrs
    ```
@@ -66,7 +82,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-3. **API-SIMRS Config:**
+4. **API-SIMRS Config:**
    ```bash
    sudo mkdir /var/www/api-simrs
    ```
@@ -149,7 +165,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-4. **Satset-Server Config:**
+5. **Satset-Server Config:**
    ```bash
    sudo mkdir /var/www/satset-server
    ```
@@ -224,7 +240,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-5. **Satset-Client Config:**
+7. **Satset-Client Config:**
    ```bash
    sudo mkdir /var/www/satset-client
    ```
