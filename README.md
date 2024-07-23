@@ -12,9 +12,6 @@
    sudo ufw app list
    ```
    ```bash
-   sudo ufw allow ‘Apache Full’
-   ```
-   ```bash
    sudo ufw allow OpenSSH
    ```
    ```bash
@@ -141,7 +138,7 @@
    ```bash
    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
    ```
-   ```bash
+   ```sh
    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
    ```
@@ -407,4 +404,8 @@
    ```
    ```bash
    sudo supervisorctl start laravel-pulse-worker:*
+   ```
+   
+   ```bash
+   sudo supervisorctl
    ```
