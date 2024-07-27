@@ -87,6 +87,15 @@
    cd /var/www/simrs
    ```
    ```bash
+   sudo usermod -a -G www-data $USER
+   ```
+   ```bash
+   sudo chown -R $USER:www-data application/logs
+   ```
+   ```bash
+   sudo chmod -R ug+rw application/logs
+   ```
+   ```bash
    composer install --optimize-autoloader --no-dev
    ```
    ```bash
@@ -122,9 +131,6 @@
    ```
    ```bash
    cd /var/www/api-simrs
-   ```
-   ```bash
-   sudo usermod -a -G www-data $USER
    ```
    ```bash
    sudo chown -R $USER:www-data storage bootstrap/cache
@@ -199,82 +205,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-6. **Satset-Server Installation:**
-   ```bash
-   sudo mkdir /var/www/satset-server
-   ```
-   ```bash
-   cd /var/www/satset-server
-   ```
-   ```bash
-   npm install --production
-   ```
-   ```bash
-   cp .env.example .env
-   ```
-   ```bash
-   nano .env
-   ```
-   ```bash
-   cp data/database.example.db data/database.db
-   ```
-   ```bash
-   npm install pm2 -g
-   ```
-   ```bash
-   pm2 start src/index.js --name satset-server
-   ```
-   ```bash
-   pm2 list
-   ```
-   ```bash
-   sudo ufw status
-   ```
-   ```bash
-   sudo ufw allow 8033
-   ```
-   ```bash
-   sudo ufw status
-   ```
-   ```bash
-   sudo nano /etc/apache2/ports.conf
-   ```
-   ```bash
-   sudo a2enmod proxy
-   ```
-   ```bash
-   sudo a2enmod proxy_http
-   ```
-   ```bash
-   sudo nano /etc/apache2/sites-available/satset-server.conf
-   ```
-   ```bash
-   sudo nano /etc/apache2/ports.conf
-   ```
-   ```bash
-   <VirtualHost *:8033>
-      ServerName localhost
-       DocumentRoot /var/www/satset-server
-
-       ProxyRequests Off
-       ProxyPreserveHost On
-       ProxyPass / http://127.0.0.1:3033
-       ProxyPassReverse / http://127.0.0.1:3033
-
-       ErrorLog ${APACHE_LOG_DIR}/error.log
-       CustomLog ${APACHE_LOG_DIR}/access.log combined
-   </VirtualHost>
-   ```
-   ```bash
-   sudo apache2ctl configtest
-   ```
-   ```bash
-   sudo a2ensite satset-server.conf
-   ```
-   ```bash
-   sudo systemctl restart apache2
-   ```
-7. **Satset-Client Installation:**
+6. **Satset-Client Installation:**
    ```bash
    sudo mkdir /var/www/satset-client
    ```
