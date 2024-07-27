@@ -152,7 +152,7 @@
    nvm install node
    ```
    ```bash
-   npm install --production
+   npm install
    ```
    ```bash
    npm run build
@@ -225,7 +225,7 @@
    sudo chmod -R ug+rwx storage bootstrap/cache
    ```
    ```bash
-   npm install --production
+   npm install
    ```
    ```bash
    npm run build
@@ -293,7 +293,7 @@
    ```bash
    [program:satset-client-worker]
    process_name=%(program_name)s_%(process_num)02d
-   command=php /var/www/satset_client/artisan queue:work --queue=patients,outpatient,default --timeout=300
+   command=php /var/www/satset-client/artisan queue:work --queue=patients,outpatient,default --timeout=300
    autostart=true
    autorestart=true
    stopasgroup=true
@@ -301,7 +301,7 @@
    user=www-data
    numprocs=1
    redirect_stderr=true
-   stdout_logfile= /var/www/satset_client/storage/logs/satset-client-worker.log
+   stdout_logfile= /var/www/satset-client/storage/logs/satset-client-worker.log
    stopwaitsecs=3600
    ```
    ```bash
@@ -319,12 +319,12 @@
    ```bash
    [program:laravel-pulse-worker]
    process_name=%(program_name)s
-   command=php /var/www/abiyosoft_simrs_api/artisan pulse:check
+   command=php /var/www/satset-client/artisan pulse:check
    autostart=true
    autorestart=true
    user=www-data
    redirect_stderr=true
-   stdout_logfile=/var/www/abiyosoft_simrs_api/storage/logs/laravel-pulse-worker.log
+   stdout_logfile=/var/www/satset-client/storage/logs/laravel-pulse-worker.log
    stopwaitsecs=3600
    ```
    ```bash
@@ -336,7 +336,6 @@
    ```bash
    sudo supervisorctl start laravel-pulse-worker:*
    ```
-   
    ```bash
    sudo supervisorctl
    ```
