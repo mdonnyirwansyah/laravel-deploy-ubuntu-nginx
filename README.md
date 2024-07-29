@@ -96,6 +96,9 @@
    sudo chmod -R ug+rw application/logs
    ```
    ```bash
+   sudo chmod g+s application/logs
+   ```
+   ```bash
    composer install --optimize-autoloader --no-dev
    ```
    ```bash
@@ -140,6 +143,9 @@
    ```
    ```bash
    sudo chmod -R ug+rwx storage bootstrap/cache
+   ```
+   ```bash
+   sudo chmod g+s storage bootstrap/cache
    ```
    ```bash
    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -223,6 +229,9 @@
    ```
    ```bash
    sudo chmod -R ug+rwx storage bootstrap/cache
+   ```
+   ```bash
+   sudo chmod g+s storage bootstrap/cache
    ```
    ```bash
    npm install
