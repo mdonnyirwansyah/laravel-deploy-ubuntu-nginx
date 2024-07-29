@@ -145,7 +145,7 @@
    sudo chmod -R ug+rwx storage bootstrap/cache
    ```
    ```bash
-   sudo chmod g+s storage bootstrap/cache
+   sudo chmod g+s storage/logs
    ```
    ```bash
    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -228,10 +228,10 @@
    sudo chgrp -R www-data storage bootstrap/cache
    ```
    ```bash
-   sudo chmod -R ug+rwx storage bootstrap/cache
+   sudo chmod -R ug+rwsx storage bootstrap/cache
    ```
    ```bash
-   sudo chmod g+s storage bootstrap/cache
+   sudo chmod g+s storage/logs
    ```
    ```bash
    npm install
