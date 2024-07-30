@@ -57,7 +57,17 @@
    ```bash
    sudo a2dissite 000-default.conf
    ```
-3. **Setup Database:**
+3. **Setup SSL:**
+   ```bash
+   openssl genrsa -out hms.key 2048
+   ```
+   ```bash
+   openssl req -new -key hms.key -out hms.csr
+   ```
+   ```bash
+   openssl x509 -req -days 365 -in hms.csr -signkey hms.key -out hms.crt
+   ```
+4. **Setup Database:**
    ```bash
    sudo mysql
    ```
@@ -79,7 +89,7 @@
    ```bash
    mysql -u simrs_admin -p simrs_db < db-dumps/mysql-simrs_db.sql
    ```
-4. **SIMRS Installation:**
+5. **SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/simrs
    ```
@@ -128,7 +138,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-5. **API-SIMRS Installation:**
+6. **API-SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/api-simrs
    ```
@@ -211,7 +221,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-6. **Satset-Client Installation:**
+7. **Satset-Client Installation:**
    ```bash
    sudo mkdir /var/www/satset-client
    ```
