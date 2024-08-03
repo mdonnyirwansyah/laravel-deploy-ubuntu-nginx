@@ -103,6 +103,9 @@
    sudo chown -R $USER:www-data application/logs
    ```
    ```bash
+   sudo chown -R $USER:www-data public
+   ```
+   ```bash
    sudo chmod -R ug+rw application/logs
    ```
    ```bash
