@@ -186,6 +186,9 @@
    php artisan key:generate
    ```
    ```bash
+   php artisan storage:link
+   ```
+   ```bash
    sudo ufw status
    ```
    ```bash
