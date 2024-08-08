@@ -100,10 +100,7 @@
    sudo usermod -a -G www-data $USER
    ```
    ```bash
-   sudo chown -R $USER:www-data application/logs
-   ```
-   ```bash
-   sudo chown -R $USER:www-data public
+   sudo chown -R $USER:www-data application/logs public
    ```
    ```bash
    sudo chmod -R ug+rw application/logs
@@ -150,9 +147,6 @@
    ```
    ```bash
    sudo chown -R $USER:www-data storage bootstrap/cache
-   ```
-   ```bash
-   sudo chgrp -R www-data storage bootstrap/cache
    ```
    ```bash
    sudo chmod -R ug+rwx storage bootstrap/cache
@@ -241,10 +235,7 @@
    sudo chown -R $USER:www-data storage bootstrap/cache
    ```
    ```bash
-   sudo chgrp -R www-data storage bootstrap/cache
-   ```
-   ```bash
-   sudo chmod -R ug+rwsx storage bootstrap/cache
+   sudo chmod -R ug+rwx storage bootstrap/cache
    ```
    ```bash
    sudo chmod g+s storage/logs
