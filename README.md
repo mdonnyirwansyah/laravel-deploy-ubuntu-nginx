@@ -117,9 +117,9 @@
    ```bash
    <VirtualHost *:80>
       ServerName localhost
-       DocumentRoot /var/www/simrs
+       DocumentRoot /var/www/simrs/public
 
-       <Directory /var/www/simrs>
+       <Directory /var/www/simrs/public>
            Options Indexes FollowSymLinks
            AllowOverride All
            Require all granted
