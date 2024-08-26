@@ -355,3 +355,36 @@
    ```bash
    sudo supervisorctl
    ```
+8. **Setup Git Hooks:**
+   ```bash
+   nano .git/hooks/post-commit
+   ```
+   ```bash
+   #!/bin/sh
+   #
+   # An example hook script to prepare a packed repository for use over
+   # dumb transports.
+   #
+   # To enable this hook, rename this file to "post-commit".
+   BRANCH=$(git branch --show-current)
+   SHORT_HASH=$(git log -n1 --format="%h")
+   DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
+   echo '['$DATE'] git.INFO: COMMIT {"id":"'"$SHORT_HASH"'", "branch":"'"$BRANCH"'"}' >> history.log
+   ```
+   ```bash
+   nano .git/hooks/post-merge
+   ```
+   ```bash
+   #!/bin/sh
+   #
+   # An example hook script to prepare a packed repository for use over
+   # dumb transports.
+   #
+   # To enable this hook, rename this file to "post-merge".
+   BRANCH=$(git branch --show-current)
+   SHORT_HASH=$(git log -n1 --format="%h")
+   DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
+   echo '['$DATE'] git.INFO: COMMIT {"id":"'"$SHORT_HASH"'", "branch":"'"$BRANCH"'"}' >> history.log
+   ```
