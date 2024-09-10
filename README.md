@@ -388,3 +388,6 @@
 
    echo '['$DATE'] git.INFO: COMMIT {"id":"'"$SHORT_HASH"'", "branch":"'"$BRANCH"'"}' >> history.log
    ```
+   ```bash
+   sudo chmod -R u+rwx .git
+   ```
