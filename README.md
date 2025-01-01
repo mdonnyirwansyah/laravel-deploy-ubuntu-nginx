@@ -125,6 +125,7 @@
    ```bash
    sudo chown -R www-data:www-data uploads
    ```
+   
    ```bash
    composer install --optimize-autoloader --no-dev
    ```
