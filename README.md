@@ -108,6 +108,19 @@
    ```bash
    sudo chmod g+s application/logs
    ```
+   Additional Config For Cantik Project
+   ```bash
+   sudo chmod 775 application/vendor/mpdf/mpdf/tmp
+   ```
+   ```bash
+   sudo chown -R www-data:www-data application/vendor/mpdf/mpdf/tmp
+   ```
+   ```bash
+   sudo chmod 775 uploads
+   ```
+   ```bash
+   sudo chown -R www-data:www-data uploads
+   ```
    ```bash
    composer install --optimize-autoloader --no-dev
    ```
@@ -138,7 +151,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-6. **API-SIMRS Installation:**
+7. **API-SIMRS Installation:**
    ```bash
    sudo mkdir /var/www/api-simrs
    ```
@@ -221,7 +234,7 @@
    ```bash
    sudo systemctl restart apache2
    ```
-7. **Satset-Client Installation:**
+8. **Satset-Client Installation:**
    ```bash
    sudo mkdir /var/www/satset-client
    ```
@@ -355,7 +368,7 @@
    ```bash
    sudo supervisorctl
    ```
-8. **Setup Git Hooks:**
+9. **Setup Git Hooks:**
    ```bash
    nano .git/hooks/post-commit
    ```
