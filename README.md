@@ -108,12 +108,16 @@
    ```bash
    sudo chmod g+s application/logs
    ```
-   Additional Config For Cantik Project
+   
+   *Additional Config For Cantik Project:
    ```bash
    sudo chmod 775 application/vendor/mpdf/mpdf/tmp
    ```
    ```bash
    sudo chown -R www-data:www-data application/vendor/mpdf/mpdf/tmp
+   ```
+   ```bash
+   mkdir uploads
    ```
    ```bash
    sudo chmod 775 uploads
