@@ -125,6 +125,9 @@
    ```bash
    sudo chown -R www-data:www-data uploads
    ```
+   ```bash
+   sudo chown -R www-data:www-data public/assets/img/ttd
+   ```
    *
    ```bash
    composer install --optimize-autoloader --no-dev
